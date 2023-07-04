@@ -1,7 +1,8 @@
 <?php
     require_once('libs/Router.php');
     require_once('./api/controllers/room.api.controller.php');
-    require_once './api/controllers/auth.api.controller.php';
+    require_once('./api/controllers/theme.api.controller.php');
+    require_once('./api/controllers/auth.api.controller.php');
     
     // CONSTANTES PARA RUTEO
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -14,6 +15,12 @@
     $router->addRoute("/rooms/:ID", "DELETE", "RoomApiController", "deleteRoom");
     $router->addRoute("/rooms", "POST", "RoomApiController", "addRoom");
     $router->addRoute("/rooms/:ID", "PUT", "RoomApiController", "updateRoom");
+
+    $router->addRoute("/themes", "GET", "ThemeApiController", "getThemes");
+    $router->addRoute("/themes/:ID", "GET", "ThemeApiController", "getTheme");
+    $router->addRoute("/themes/:ID", "DELETE", "ThemeApiController", "deleteTheme");
+    $router->addRoute("/themes", "POST", "ThemeApiController", "addTheme");
+    $router->addRoute("/themes/:ID", "PUT", "ThemeApiController", "updateTheme");
 
     $router->addRoute("/auth/token", 'GET', 'AuthApiController', 'getToken');
 

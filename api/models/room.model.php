@@ -63,15 +63,6 @@ class RoomModel {
         }
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
-    
-    /**
-     * Retorna todas las tareas de acuerdo a la prioridad y si está finalizada o no.
-     */
-    public function getRooms($prioridad, $finalizada) {
-        $query = $this->db->prepare("SELECT * FROM tareas WHERE prioridad = ? AND finalizada = ?");
-        $query->execute(array($prioridad, $finalizada));
-        return $query->fetchAll();
-    }
 
     /**
      * Retorna una sala según el id pasado.
