@@ -43,7 +43,7 @@ class ThemeApiController {
                         throw new Exception("Los valores posibles de orderBy son: name, classification");
                     $themes = $this->model->getAllSorted($orderBy, $order, $pagination);
                 } else {
-                    $themes = $this->model->getAllSortedByCapacity($order, $pagination);
+                    $themes = $this->model->getAllSortedByClassification($order, $pagination);
                 }
             } else if (isset($_GET['filterBy']) && isset($_GET['value'])) {
                 $filterBy = $_GET['filterBy'];

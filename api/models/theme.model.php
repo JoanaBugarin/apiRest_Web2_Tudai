@@ -39,7 +39,7 @@ class ThemeModel {
     /**
      * Obtiene las temáticas ordenadas por el campo classification según el orden pasado como parámetro (ASC o DESC)
      */
-    public function getAllSortedByCapacity($order, $pagination) {
+    public function getAllSortedByClassification($order, $pagination) {
         if ($pagination[0]) {
             $query = $this->db->prepare('SELECT * FROM themes ORDER BY classification '. $order.' LIMIT '.$pagination[2].' OFFSET '.($pagination[1]-1)*$pagination[2]);
             $query->execute();
