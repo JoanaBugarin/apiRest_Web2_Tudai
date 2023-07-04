@@ -5,7 +5,7 @@ Trabajo práctico especial de la materia Web 2 de la carrera "Tecnicatura Univer
 > http://localhost/apiRest_Web2_Tudai/api
 
 ## Recurso Rooms
-> Verbo: `GET`    
+> **Verbo**: `GET`    
 > URI: /rooms    
 > Descripción: obtiene todas las salas de escape alojadas en la base de datos, algunos parámetros opcionales permiten paginar, ordenar o filtrar los resultados.    
 > Parámetros: (query params, todos opcionales)    
