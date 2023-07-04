@@ -29,5 +29,32 @@ Trabajo práctico especial de la materia Web 2 de la carrera "Tecnicatura Univer
 > Req Body: no posee.    
 > Códigos de resp: 200 (OK), 404 (Not found)    
 > Respuesta: se espera un JSON, que representa una sala de escape con las propiedades id, name, description, capacity, theme_id, difficulty, time, image.    
+    
+> Verbo: `POST`    
+> URI: /rooms    
+> Descripción: añade una nueva sala de escape a la base de datos.
+> Parámetros: no tiene    
+`Ejemplo: /rooms` - inserta una sala de escape nueva en la base de datos, con los datos pasados en el body del request.    
+> Req Body: se debe pasar un JSON con las propiedades name (valor de tipo texto), description (valor de tipo texto), capacity (valor de tipo entero > 1), theme_id (valor de tipo entero >= 0), difficulty (valor de tipo texto), time (valor de tipo entero > 0), image (valor de tipo texto).    
+> Códigos de resp: 200 (OK), 401 (Unauthorized), 500 (Internal server error)    
+> Respuesta: se espera un JSON, que representa la nueva sala de escape con las propiedades id, name, description, capacity, theme_id, difficulty, time, image.
+
+> Verbo: `PUT`    
+> URI: /rooms/:ID    
+> Descripción: busca por su id y actualiza una sala de escape en la base de datos.
+> Parámetros: `:ID` se debe reemplazar por el ID de la sala de escape deseada. Es un valor entero no menor a cero.    
+`Ejemplo: /rooms/11` - actualiza la sala de escape con el id 11 en la base de datos, con los datos pasados en el body del request.    
+> Req Body: se debe pasar un JSON con las propiedades name (valor de tipo texto), description (valor de tipo texto), capacity (valor de tipo entero > 1), theme_id (valor de tipo entero >= 0), difficulty (valor de tipo texto), time (valor de tipo entero > 0), image (valor de tipo texto).    
+> Códigos de resp: 200 (OK), 401 (Unauthorized), 404 (Not found)    
+> Respuesta: se espera un mensaje de texto detallando cómo resultó la solicitud.    
+    
+> Verbo: `DELETE`    
+> URI: /rooms/:ID    
+> Descripción: busca por su id una sala de escape y la elimina de la base de datos.
+> Parámetros: `:ID` se debe reemplazar por el ID de la sala de escape deseada. Es un valor entero no menor a cero.    
+`Ejemplo: /rooms/11` - elimina la sala de escape con el id 11 en la base de datos.    
+> Req Body: no tiene        
+> Códigos de resp: 200 (OK), 401 (Unauthorized), 404 (Not found)    
+> Respuesta: se espera un mensaje de texto detallando cómo resultó la solicitud.
 
 ##Recurso Themes
